@@ -1,5 +1,6 @@
 import type { IncomingMessage, ServerResponse } from "http";
 import { readProduct } from "../service/product.service";
+import type { IProduct } from "../types/product.type";
 
 export const productController = (
   req: IncomingMessage,
@@ -15,12 +16,14 @@ export const productController = (
 
   if (url === "/product" && method === "GET") {
     // const product = [{ id: 12, name: "suzan", company: "software" }];
-    const product = readProduct();
+    const products = readProduct();
     res.writeHead(200, { "content-type": "application/json" });
     res.end(
-      JSON.stringify({ message: "product sent successful", data: product }),
+      JSON.stringify({ message: "product sent successful", data: products }),
     );
   } else if (method === "GET" && id !== null) {
-    
+    const products = readProduct();
+    const product = products.find((p: IProduct) => p.id === id);
+    console.log(product);
   }
 };
