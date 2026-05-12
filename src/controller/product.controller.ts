@@ -7,15 +7,19 @@ export const productController = (
 ) => {
   const url = req.url;
   const method = req.method;
+  const urlParts = url?.split("/");
+  const id = urlParts && urlParts[1] === "product" ? Number(urlParts[2]) : null;
 
-  readProduct();
 
-  const product = [{ id: 12, name: "suzan", company: "software" }];
+  
 
   if (url === "/product" && method === "GET") {
+    // const product = [{ id: 12, name: "suzan", company: "software" }];
+    const product = readProduct();
     res.writeHead(200, { "content-type": "application/json" });
     res.end(
       JSON.stringify({ message: "product sent successful", data: product }),
     );
+  } else if (method === "GET") {
   }
 };
