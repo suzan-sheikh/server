@@ -1,7 +1,20 @@
 [
-    {
-        "id": 1,
-        "name": "product-1",
-        "price": 100
-    }
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "price": 25,
+    "description": "Ergonomic wireless mouse with USB receiver and adjustable DPI."
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "price": 80,
+    "description": "RGB backlit mechanical keyboard with blue switches for gaming and typing."
+  },
+  {
+    "id": 3,
+    "name": "Noise Cancelling Headphones",
+    "price": 150,
+    "description": "Over-ear Bluetooth headphones with active noise cancellation and 20-hour battery life."
+  }
 ]

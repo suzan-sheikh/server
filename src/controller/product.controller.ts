@@ -11,7 +11,7 @@ export const productController = (
   const id = urlParts && urlParts[1] === "product" ? Number(urlParts[2]) : null;
 
 
-  
+
 
   if (url === "/product" && method === "GET") {
     // const product = [{ id: 12, name: "suzan", company: "software" }];
@@ -20,6 +20,7 @@ export const productController = (
     res.end(
       JSON.stringify({ message: "product sent successful", data: product }),
     );
-  } else if (method === "GET") {
+  } else if (method === "GET" && id !== null) {
+    
   }
 };
